@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import OurStory from './pages/OurStory';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 // ScrollToTop component to reset scroll position on page change
 function ScrollToTop() {
@@ -105,6 +107,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home mainImage={mainImage} />} />
           <Route path="/our-story" element={<OurStory />} />
+          <Route path="/benefits" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </main>
 
