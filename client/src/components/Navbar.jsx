@@ -13,7 +13,7 @@ function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen, logo }) {
       <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
         <Link to="/our-story" className="nav-link" onClick={() => setIsMenuOpen(false)}>Our Story</Link>
-        <a href="/#benefits" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefits</a>
+        <Link to="/benefits" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefits</Link>
         <a href="/#products" className="nav-link" onClick={() => setIsMenuOpen(false)}>Products</a>
         <a href="/#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
       </div>
