@@ -517,6 +517,15 @@ a {
   border-radius: 2px;
 }
 
+.section-heading.left {
+  text-align: left;
+}
+
+.section-heading.left::after {
+  left: 0;
+  transform: none;
+}
+
 /* Benefits Section */
 .benefits-section {
   padding: 5rem 4rem;
@@ -846,13 +855,6 @@ a {
   height: fit-content;
 }
 
-.page-title {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-text);
-  font-family: var(--font-serif);
-}
-
 .story-text {
   font-size: 1.1rem;
   color: #666;
@@ -954,6 +956,60 @@ a {
   opacity: 0.5;
 }
 
+/* Harvest Process Section */
+.harvest-process {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.process-card {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+}
+
+.process-image-box {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.process-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.process-card:hover .process-image-box img {
+  transform: scale(1.05);
+}
+
+.process-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(65, 53, 46, 0.95); /* var(--color-text) with opacity */
+  color: #fff;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 /* Responsive Our Story */
 @media (max-width: 1024px) {
   .story-container {
@@ -980,6 +1036,10 @@ a {
   }
   
   .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
     grid-template-columns: 1fr;
   }
   

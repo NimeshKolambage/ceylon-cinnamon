@@ -7,7 +7,7 @@ function OurStory() {
       <div className="story-container">
         <div className="story-main-content">
           <section className="story-intro reveal">
-            <h1 className="page-title">Our Story</h1>
+            <h1 className="section-heading left">Our Story</h1>
             <p className="story-text">
               Discover the journey of the world's finest cinnamon, from the sun-drenched plantations of Sri Lanka 
               to your kitchen. Our legacy is built on centuries of tradition, sustainable harvesting, 
@@ -43,10 +43,37 @@ function OurStory() {
             </div>
           </section>
 
+          <section className="harvest-process reveal">
+            <h2 className="section-heading">OUR HARVEST PROCESS</h2>
+            
+            <div className="process-grid">
+              <div className="process-card">
+                <div className="process-image-box">
+                  <img src="./src/assets/mainimage.jpg" alt="Sustainable Farming" />
+                  <div className="process-label">SUSTAINABLE FARMING</div>
+                </div>
+              </div>
+              
+              <div className="process-card">
+                <div className="process-image-box">
+                  <img src="./src/assets/secondimage.jpg" alt="Traditional Peeling" />
+                  <div className="process-label">TRADITIONAL PEELING</div>
+                </div>
+              </div>
+              
+              <div className="process-card">
+                <div className="process-image-box">
+                  <img src="./src/assets/cinnamon-stics.jpg" alt="Sun Drying" />
+                  <div className="process-label">SUN DRYING</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section id="history" className="history-production reveal">
             <div className="history-content">
               <div className="history-text">
-                <h2>History and Production</h2>
+                <h2 className="section-heading left">History and Production</h2>
                 <p>
                   Ceylon cinnamon (Cinnamomum zeylanicum) has been prized for millennia. 
                   Unlike common Cassia cinnamon, our true cinnamon is hand-peeled by master craftsmen 
@@ -66,18 +93,7 @@ function OurStory() {
           </section>
         </div>
 
-        <aside className="story-sidebar reveal">
-          <div className="adsense-placeholder">
-            <div className="ad-box">
-              <svg viewBox="0 0 100 100" className="ad-icon">
-                <path d="M20 20h60v60H20z" fill="#f0f0f0" />
-                <path d="M30 40h40M30 50h40M30 60h20" stroke="#ccc" strokeWidth="2" />
-                <path d="M70 25l5 5-5 5" fill="#4285F4" />
-              </svg>
-              <span>AdSense ad</span>
-            </div>
-          </div>
-        </aside>
+    
       </div>
     </div>
   );
