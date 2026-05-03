@@ -14,8 +14,7 @@ function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen, logo }) {
         <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
         <Link to="/our-story" className="nav-link" onClick={() => setIsMenuOpen(false)}>Our Story</Link>
         <Link to="/benefits" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefits</Link>
-        <a href="/#products" className="nav-link" onClick={() => setIsMenuOpen(false)}>Products</a>
-        <a href="/#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
+        <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
       </div>
 
       <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">

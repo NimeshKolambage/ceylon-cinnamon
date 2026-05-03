@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import OurStory from './pages/OurStory';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Contact from './pages/contact';
 
 // ScrollToTop component to reset scroll position on page change
 function ScrollToTop() {
@@ -109,6 +110,7 @@ function App() {
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/benefits" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 
