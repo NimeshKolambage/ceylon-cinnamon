@@ -28,6 +28,43 @@ function ScrollToTop() {
   return null;
 }
 
+// Observer component to handle reveal animations across route changes
+function RevealObserver() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { 
+      threshold: 0.05, // Lower threshold to trigger faster
+      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it enters
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach((el) => observer.observe(el));
+
+    // Force a check for elements already in view
+    setTimeout(() => {
+      revealElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('active');
+        }
+      });
+    }, 100);
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [pathname]); // Re-run whenever the route changes
+
+  return null;
+}
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,27 +86,10 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Reveal animation logic needs to be re-run on route changes
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
-  }); // Run on every render/route change
-
   return (
     <Router>
       <ScrollToTop />
+      <RevealObserver />
       <div className={`loader-container ${!isLoading ? 'fade-out' : ''}`}>
         <img src={logo} alt="Loading..." className="loader-logo" />
       </div>

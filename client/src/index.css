@@ -969,19 +969,23 @@ a {
 }
 
 .process-card {
-  border-radius: 4px;
+  background-color: var(--color-white);
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .process-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 
 .process-image-box {
   position: relative;
-  height: 300px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -989,25 +993,32 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .process-card:hover .process-image-box img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-.process-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(65, 53, 46, 0.95); /* var(--color-text) with opacity */
-  color: #fff;
-  padding: 1rem;
-  font-size: 0.9rem;
+.process-info {
+  padding: 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.process-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+}
+
+.process-info p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 /* Responsive Our Story */
@@ -1045,5 +1056,75 @@ a {
   
   .history-content {
     flex-direction: column;
+  }
+}
+
+/* Cinnamon Map Section */
+.cinnamon-map-section {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.map-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-description {
+  flex: 1;
+  text-align: left;
+}
+
+.map-image-wrapper {
+  flex: 1.2;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-lg);
+  border-radius: 8px;
+  border: 1px solid #e0d5c5;
+}
+
+.vintage-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.map-description p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.map-description strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .map-content {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .map-description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinnamon-map-section {
+    margin: 4rem 0;
+  }
+  
+  .map-description p {
+    font-size: 1rem;
   }
 }
