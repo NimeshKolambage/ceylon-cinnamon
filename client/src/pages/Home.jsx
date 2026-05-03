@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BuyModal from '../components/BuyModal';
 
 function Home({ mainImage }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
   return (
     <>
       <section className="hero" style={{ backgroundImage: `url(${mainImage})` }}>
@@ -12,7 +17,7 @@ function Home({ mainImage }) {
             From Sri Lanka, To Your Home. The<br />
             World's Finest, Hand-Harvested Spice.
           </p>
-          <button className="btn-shop">SHOP NOW</button>
+          <button className="btn-shop" onClick={handleOpenModal}>SHOP NOW</button>
 
           <div className="trust-badges">
             <div className="badge">
@@ -68,7 +73,7 @@ function Home({ mainImage }) {
             <div className="product-info">
               <h3>Premium Cinnamon Sticks</h3>
               <p className="price">$14.99</p>
-              <button className="btn-add-cart">Add to Cart</button>
+              <button className="btn-add-cart" onClick={handleOpenModal}>Add to Cart</button>
             </div>
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.2s' }}>
@@ -78,7 +83,7 @@ function Home({ mainImage }) {
             <div className="product-info">
               <h3>Pure Cinnamon Powder</h3>
               <p className="price">$12.50</p>
-              <button className="btn-add-cart">Add to Cart</button>
+              <button className="btn-add-cart" onClick={handleOpenModal}>Add to Cart</button>
             </div>
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.3s' }}>
@@ -88,11 +93,12 @@ function Home({ mainImage }) {
             <div className="product-info">
               <h3>Cinnamon Leaf Oil</h3>
               <p className="price">$18.00</p>
-              <button className="btn-add-cart">Add to Cart</button>
+              <button className="btn-add-cart" onClick={handleOpenModal}>Add to Cart</button>
             </div>
           </div>
         </div>
       </section>
+      <BuyModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
