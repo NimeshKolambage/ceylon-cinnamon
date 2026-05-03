@@ -19,34 +19,47 @@ function BlogPost() {
 
   return (
     <div className="blog-post-page">
-      <article className="blog-post-container">
-        <header className="post-header reveal">
-          <Link to="/benefits" className="back-link">&larr; Back to Blogs</Link>
-          <h1 className="post-title">{blog.title}</h1>
-          <div className="post-meta">
-            <span>Published on {blog.date}</span>
+      <div className="blog-container">
+        <article className="blog-post-container">
+          <header className="post-header reveal">
+            <Link to="/benefits" className="back-link">&larr; Back to Benefits</Link>
+            <h1 className="post-title">{blog.title}</h1>
+            <div className="post-meta">
+              <span className="post-category">Health & Wellness</span>
+              <span className="post-date">{blog.date}</span>
+            </div>
+          </header>
+
+          <div className="post-featured-image reveal">
+            <img src={blog.image} alt={blog.title} />
           </div>
-        </header>
 
-        <div className="post-featured-image reveal">
-          <img src={blog.image} alt={blog.title} />
-        </div>
-
-        <div className="post-content reveal" dangerouslySetInnerHTML={{ __html: blog.content }} />
+          <div className="post-content reveal" dangerouslySetInnerHTML={{ __html: blog.content }} />
+          
         
-        <footer className="post-footer reveal">
-          <div className="share-section">
-            <h4>Share this benefit:</h4>
-            <div className="share-links">
-              {/* Dummy share icons */}
-              <button className="share-btn">Facebook</button>
-              <button className="share-btn">Twitter</button>
-              <button className="share-btn">WhatsApp</button>
+        </article>
+
+        <aside className="blog-sidebar reveal">
+          <div className="sidebar-widget">
+            <h3>Recent Benefits</h3>
+            <div className="recent-posts">
+              {blogs.filter(b => b.id !== blog.id).slice(0, 3).map(recent => (
+                <Link to={`/blog/${recent.id}`} key={recent.id} className="recent-post-item">
+                  <div className="recent-post-thumb">
+                    <img src={recent.image} alt={recent.title} />
+                  </div>
+                  <div className="recent-post-info">
+                    <h4>{recent.title}</h4>
+                    <span>{recent.date}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
-          <Link to="/benefits" className="btn-primary">View All Benefits</Link>
-        </footer>
-      </article>
+
+         
+        </aside>
+      </div>
     </div>
   );
 }
