@@ -1,122 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from 'react';
+import logo from './assets/logo.png';
+import mainImage from './assets/mainimage.jpg';
+import secondImage from './assets/secondimage.jpg';
+import './index.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <nav className="navbar">
+        <div className="logo-container">
+          <img src={logo} alt="Ceylon Cinnamon Logo" className="logo-img" />
+          <span className="logo-text">CEYLON CINNAMON</span>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+        <div className="nav-links">
+          <a href="#" className="nav-link active">Home</a>
+          <a href="#story" className="nav-link">Our Story</a>
+          <a href="#products" className="nav-link">Products</a>
+          <a href="#benefits" className="nav-link">Benefits</a>
+          <a href="#contact" className="nav-link">Contact</a>
+        </div>
+
+      </nav>
+
+      <section className="hero" style={{ backgroundImage: `url(${mainImage})` }}>
+        <div className="hero-content">
+          <h1 className="hero-title">
+            AUTHENTIC<br />CEYLON CINNAMON
+          </h1>
+          <p className="hero-subtitle">
+            From Sri Lanka, To Your Home. The<br />
+            World's Finest, Hand-Harvested Spice.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <button className="btn-shop">SHOP NOW</button>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <section id="story" className="story-section">
+        <div className="story-container">
+          <div className="story-image-container">
+            <img src={secondImage} alt="Cinnamon Sticks" className="story-image" />
+          </div>
+          <div className="story-content">
+            <h2 className="story-title">Our Story</h2>
+            <p className="story-text">
+              Ceylon Cinnamon is essentially native to the island of Sri Lanka an international name of production
+              cinnamon with over 100 years combined history exists ever more personal solution processors
+              and minimal production of final products.
+            </p>
+            <a href="#" className="learn-more">Learn More &gt;</a>
+          </div>
+        </div>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
