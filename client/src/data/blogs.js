@@ -1,3 +1,11 @@
+import img1 from '../assets/1.jpg';
+import sticksImg from '../assets/cinnamon-stics.jpg';
+import img3 from '../assets/3.jpg';
+import img2 from '../assets/2.jpg';
+import img4 from '../assets/4.png';
+import img5 from '../assets/5.jpg';
+import oilImg from '../assets/cinnamon-oil.jpg';
+
 export const blogs = [
   {
     id: 1,
@@ -15,7 +23,7 @@ export const blogs = [
       </ul>
       <p>Try adding half a teaspoon of Ceylon cinnamon powder to your morning tea or smoothie to start reaping these benefits today.</p>
     `,
-    image: "/src/assets/1.jpg",
+    image: img1,
     date: "May 10, 2026"
   },
   {
@@ -32,7 +40,7 @@ export const blogs = [
       <p><strong>Flavor:</strong> Ceylon is mild and sweet; Cassia is pungent and slightly spicy.</p>
       <p>When you choose Ceylon, you're not just choosing flavor—you're choosing the highest quality spice with the most health benefits and the lowest risk of toxins.</p>
     `,
-    image: "/src/assets/cinnamon-stics.jpg",
+    image: sticksImg,
     date: "May 12, 2026"
   },
   {
@@ -46,7 +54,7 @@ export const blogs = [
       <blockquote>"Cinnamon is not a replacement for medical treatment, but it is an excellent dietary addition for long-term heart support."</blockquote>
       <p>Daily consumption of even a small amount of Ceylon cinnamon can make a significant difference in your long-term cardiovascular health profile.</p>
     `,
-    image: "/src/assets/3.jpg",
+    image: img3,
     date: "May 15, 2026"
   },
   {
@@ -59,7 +67,7 @@ export const blogs = [
       <p>The trees are allowed to grow for two years before their first harvest. Skilled peelers then remove the outer bark to reveal the tender inner layer. This layer is what becomes the cinnamon we love. Because we use traditional hand-tools and specific cutting techniques, the tree is able to regenerate and provide harvests for decades.</p>
       <p>This sustainable approach ensures that the local environment remains healthy, providing a livelihood for farmers and high-quality spice for the world for years to come.</p>
     `,
-    image: "/src/assets/2.jpg",
+    image: img2,
     date: "May 18, 2026"
   },
   {
@@ -78,7 +86,7 @@ export const blogs = [
       </ol>
       <p>Experimenting with Ceylon cinnamon will bring a new dimension of flavor to your daily meals.</p>
     `,
-    image: "/src/assets/4.png",
+    image: img4,
     date: "May 20, 2026"
   },
   {
@@ -91,7 +99,7 @@ export const blogs = [
       <p>Ceylon cinnamon quickly became more valuable than gold. It sparked wars and drove global exploration. The Dutch, Portuguese, and British all fought for control over the "Cinnamon Belt," recognizing the immense value of this delicate spice.</p>
       <p>Today, while the "Spice Wars" are over, the legacy of Ceylon cinnamon continues. It remains a symbol of Sri Lanka's rich heritage and a testament to the enduring appeal of quality and tradition.</p>
     `,
-    image: "/src/assets/5.jpg",
+    image: img5,
     date: "May 22, 2026"
   },
   {
@@ -110,7 +118,7 @@ export const blogs = [
       </ul>
       <p>Always remember to dilute cinnamon oil with a carrier oil if applying to the skin, as it is very potent.</p>
     `,
-    image: "/src/assets/cinnamon-oil.jpg",
+    image: oilImg,
     date: "May 25, 2026"
   }
 ];
