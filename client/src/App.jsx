@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './assets/logo.png';
 import mainImage from './assets/mainimage.jpg';
 import secondImage from './assets/secondimage.jpg';
 import './index.css';
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="logo-container">
           <img src={logo} alt="Ceylon Cinnamon Logo" className="logo-img" />
           <span className="logo-text">CEYLON CINNAMON</span>
