@@ -90,7 +90,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/ceylon-cinnamon">
+    <Router>
       <ScrollToTop />
       <RevealObserver />
       <div className={`loader-container ${!isLoading ? 'fade-out' : ''}`}>

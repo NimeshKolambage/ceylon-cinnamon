@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import BuyModal from '../components/BuyModal';
 
-// පින්තූර import කිරීම
-import sticksImg from '../assets/cinnamon-stics.jpg';
-import powderImg from '../assets/cinnamon-powder.jpg';
-import oilImg from '../assets/cinnamon-oil.jpg';
-
 function Home({ mainImage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-
   return (
     <>
       <section className="hero" style={{ backgroundImage: `url(${mainImage})` }}>
@@ -74,7 +68,7 @@ function Home({ mainImage }) {
         <div className="products-grid">
           <div className="product-card reveal" style={{ transitionDelay: '0.1s' }}>
             <div className="product-image-wrap">
-              <img src={sticksImg} alt="Cinnamon Sticks" />
+              <img src="./src/assets/cinnamon-stics.jpg" alt="Cinnamon Sticks" />
             </div>
             <div className="product-info">
               <h3>Premium Cinnamon Sticks</h3>
@@ -84,7 +78,7 @@ function Home({ mainImage }) {
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.2s' }}>
             <div className="product-image-wrap">
-              <img src={powderImg} alt="Cinnamon Powder" />
+              <img src="./src/assets/cinnamon-powder.jpg" alt="Cinnamon Powder" />
             </div>
             <div className="product-info">
               <h3>Pure Cinnamon Powder</h3>
@@ -94,7 +88,7 @@ function Home({ mainImage }) {
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.3s' }}>
             <div className="product-image-wrap">
-              <img src={oilImg} alt="Cinnamon Oil" />
+              <img src="./src/assets/cinnamon-oil.jpg" alt="Cinnamon Oil" />
             </div>
             <div className="product-info">
               <h3>Cinnamon Leaf Oil</h3>

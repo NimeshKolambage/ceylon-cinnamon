@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen, logo }) {
   return (
@@ -11,10 +11,10 @@ function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen, logo }) {
         <span className="logo-text">CEYLON CINNAMON</span>
       </div>
       <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <NavLink to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
-        <NavLink to="/our-story" className="nav-link" onClick={() => setIsMenuOpen(false)}>Our Story</NavLink>
-        <NavLink to="/benefits" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefits</NavLink>
-        <NavLink to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
+        <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
+        <Link to="/our-story" className="nav-link" onClick={() => setIsMenuOpen(false)}>Our Story</Link>
+        <Link to="/benefits" className="nav-link" onClick={() => setIsMenuOpen(false)}>Benefits</Link>
+        <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
       </div>
 
       <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
