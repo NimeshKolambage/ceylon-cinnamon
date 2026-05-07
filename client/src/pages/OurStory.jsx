@@ -1,5 +1,9 @@
 import React from 'react';
 import secondImage from '../assets/secondimage.jpg';
+import farmingImg from '../assets/Farming.png';
+import peelingImg from '../assets/Peeling.png';
+import dryingImg from '../assets/Drying.png';
+import mapImg from '../assets/map.png';
 
 function OurStory() {
   return (
@@ -49,7 +53,7 @@ function OurStory() {
             <div className="process-grid">
               <div className="process-card">
                 <div className="process-image-box">
-                  <img src="./src/assets/Farming.png" alt="Sustainable Farming" />
+                  <img src={farmingImg} alt="Sustainable Farming" />
                 </div>
                 <div className="process-info">
                   <h3>Sustainable Farming</h3>
@@ -59,7 +63,7 @@ function OurStory() {
 
               <div className="process-card">
                 <div className="process-image-box">
-                  <img src="./src/assets/Peeling.png" alt="Traditional Peeling" />
+                  <img src={peelingImg} alt="Traditional Peeling" />
                 </div>
                 <div className="process-info">
                   <h3>Traditional Peeling</h3>
@@ -69,7 +73,7 @@ function OurStory() {
 
               <div className="process-card">
                 <div className="process-image-box">
-                  <img src="./src/assets/Drying.png" alt="Sun Drying" />
+                  <img src={dryingImg} alt="Sun Drying" />
                 </div>
                 <div className="process-info">
                   <h3>Sun Drying</h3>
@@ -118,7 +122,7 @@ function OurStory() {
                 </p>
               </div>
               <div className="map-image-wrapper">
-                <img src="./src/assets/map.png" alt="Ceylon Cinnamon Belt Map" className="vintage-map" />
+                <img src={mapImg} alt="Ceylon Cinnamon Belt Map" className="vintage-map" />
               </div>
             </div>
           </section>

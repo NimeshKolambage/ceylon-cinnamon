@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import BuyModal from '../components/BuyModal';
+import cinnamonSticks from '../assets/cinnamon-stics.jpg';
+import cinnamonPowder from '../assets/cinnamon-powder.jpg';
+import cinnamonOil from '../assets/cinnamon-oil.jpg';
 
 function Home({ mainImage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,7 +71,7 @@ function Home({ mainImage }) {
         <div className="products-grid">
           <div className="product-card reveal" style={{ transitionDelay: '0.1s' }}>
             <div className="product-image-wrap">
-              <img src="./src/assets/cinnamon-stics.jpg" alt="Cinnamon Sticks" />
+              <img src={cinnamonSticks} alt="Cinnamon Sticks" />
             </div>
             <div className="product-info">
               <h3>Premium Cinnamon Sticks</h3>
@@ -78,7 +81,7 @@ function Home({ mainImage }) {
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.2s' }}>
             <div className="product-image-wrap">
-              <img src="./src/assets/cinnamon-powder.jpg" alt="Cinnamon Powder" />
+              <img src={cinnamonPowder} alt="Cinnamon Powder" />
             </div>
             <div className="product-info">
               <h3>Pure Cinnamon Powder</h3>
@@ -88,7 +91,7 @@ function Home({ mainImage }) {
           </div>
           <div className="product-card reveal" style={{ transitionDelay: '0.3s' }}>
             <div className="product-image-wrap">
-              <img src="./src/assets/cinnamon-oil.jpg" alt="Cinnamon Oil" />
+              <img src={cinnamonOil} alt="Cinnamon Oil" />
             </div>
             <div className="product-info">
               <h3>Cinnamon Leaf Oil</h3>
